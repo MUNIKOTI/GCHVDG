@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://aws46lvapp048.global.umusic.net:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='VD2CLNT100')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZFT_C_DGTRK_POC_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZFT_C_DGTRK_POCType" sap:label="Digital File Trcking" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="zaccnum"/>
+                </Key>
+                <Property Name="zaccnum" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"/>
+            </EntityType>
+            <EntityContainer Name="ZFT_C_DGTRK_POC_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZFT_C_DGTRK_POC" EntityType="ZFT_C_DGTRK_POC_CDS.ZFT_C_DGTRK_POCType" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="ZFT_C_DGTRK_POC_CDS.ZFT_C_DGTRK_POCType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>zaccnum</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://aws46lvapp048.global.umusic.net:8000/sap/opu/odata/sap/ZFT_C_DGTRK_POC_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://aws46lvapp048.global.umusic.net:8000/sap/opu/odata/sap/ZFT_C_DGTRK_POC_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
